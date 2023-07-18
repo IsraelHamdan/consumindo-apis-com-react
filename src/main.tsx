@@ -4,11 +4,14 @@ import App from "./App.tsx";
 import "./index.css";
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "./Services/queryClient.ts";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <App />
-    </QueryClientProvider>
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
